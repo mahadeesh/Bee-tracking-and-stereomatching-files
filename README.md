@@ -58,7 +58,7 @@ So, I generated the first calibration file using Yves Bouget’s stereo calibrat
 
 For your data, you must generate your own stereo calibration files using Yves Bouget and Matlab stereo calibration toolbox. The procedure to generate the stereo calibration files are explained in their websites<sup>2,3.
 
-The variable in which all minimum perpendicular distances and reprojection error values are stored in MIN_DIST_REPROJ_ERR_INFO.mat.
+The variable in which all minimum perpendicular distances and reprojection error values are stored in *MIN_DIST_REPROJ_ERR_INFO.mat*.
 
 ## References
 
