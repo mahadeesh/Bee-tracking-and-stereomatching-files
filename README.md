@@ -24,6 +24,16 @@ All you need is MATLAB from MathWorks<sup>1</sup>. I have tested the code using 
 
 4)	*fit_ellipse.m* – is an open-source ellipse fitting program.
 
+## How to perform image differencing operation using *ImageJ*
+
+1.	Drag and drop the raw video in ImageJ (variable name - v)
+2.	Go to Image in the main menu >> stacks >> Z project >> select projection type as ‘median’ and click ‘OK’ >> image with only a background scene will be obtained (variable name - ov).
+3.	Go to process in the main menu >> image calculator >> select the operation as ‘difference’.
+4.	From the Image1 drop down list box, select the file name of the raw input video. Similarly, for Image2, select the name of the file obtained in step 2 and click ‘OK’.
+5.	The resulting final video will eventually appear which will have to be saved using the ‘save as’ option from the main menu. Then, select ‘avi’ from the list which will save the final video in the destination folder as chosen by the user. 
+
+
+
 ## How to run the bee tracking program
 
 1. Download the repository into a folder
@@ -47,6 +57,14 @@ The frame numbers for which the program executed without any errors are recorded
 The list of frame numbers in which a bee was successfully tracked will be recorded in ALL\_FRAMES\_DATASET\_#\_CAM\_##\_REFER\_BEE\_###.mat.
 
 \# - dataset number, \## - camera number (left or right camera), \### - bee number
+
+
+## How to track a bee from any frame number
+
+To track bees from any point in the video, just feed in the respective frame number from which you would like to begin the tracking process. 
+
+Say for instance you are tracking a bee which is present in the arena from frame 1 to frame 800. Assume for some reason that matlab is not responding after 500 frames. In that case, you might need to close and reopen matlab again. Now, instead of starting from frame 1 again, you could continue the tracking process from frame 499. This could be done by simply updating the ‘frame_number’ and ‘frame_count’ variable with the frame number from which you would like to continue the tracking process. Also, uncomment the ‘load’ command for the 4 output variables so that the tracked information from frame 1 to frame 499 will be loaded into the program when executing the program from frame 500 onwards.
+
 
 ## Tracking results
 
