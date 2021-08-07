@@ -2,7 +2,7 @@
 
 ## Introduction
 
-Here are the files which I developed to generate time resolved 3D position information of bees flying in a bee cloud. The bee tracking program is a semi-automatic tracker of freely flying honeybees, which was developed using simple techniques such background subtraction, image differencing, interpolation, and extrapolation, to name a few. Furthermore, the problem of correspondence matching is solved in a simple way by using two different techniques namely minimum perpendicular distance method and minimum reprojection error method. [Click here](https://figshare.com/articles/media/Multi-Object_Tracking_in_Heterogeneous_environments_MOTHe_for_animal_video_recordings/11980356/3)
+Here are the files which I developed to generate time resolved 3D position information of bees flying in a bee cloud. The bee tracking program is a semi-automatic tracker of freely flying honeybees, which was developed using simple techniques such background subtraction, image differencing, interpolation, and extrapolation, to name a few. Furthermore, the problem of correspondence matching is solved in a simple way by using two different techniques namely minimum perpendicular distance method and minimum reprojection error method. 
 
 ## Highlights of the developed bee tracking and stereomatching program
 
@@ -28,9 +28,9 @@ All you need is MATLAB from MathWorks<sup>1</sup>. I have tested the code using 
 
 1. Download the repository into a folder
 
-2. To run the bee tracking program, simply open the file Sci_data_bee_tracking_pgm_3.m in Matlab and click on the run button. Before clicking on the run command, make sure all necessary input videos/files are properly placed in the local repository folder. 
+2. To run the bee tracking program, simply open the file *Sci_data_bee_tracking_pgm_3.m* in Matlab and click on the run button. Before clicking on the run command, make sure all necessary input videos/files are properly placed in the local repository folder. 
 
-You can download all input video/files necessary to run the tracking program from “here”. Place all the downloaded videos/files in the folder where you have downloaded the repository.  
+You can download all input video/files necessary to run the tracking program from [here](https://figshare.com/articles/media/Multi-Object_Tracking_in_Heterogeneous_environments_MOTHe_for_animal_video_recordings/11980356/3). Place all the downloaded videos/files in the folder where you have downloaded the repository.  
 
 As this is a semi-automatic tracking program, the program prompts for the user inputs under certain miscellaneous conditions, please provide the necessary data to smoothly continue the tracking process. When the program asks the user to input the head and tail location a bee in a particular frame, first use the Zoom-in tool on the right top corner of the matlab figure window to zoom in to see the bee’s image closely, then click on the head and tail location of that bee. If you are running the tracking program on a laptop, sometimes there might be a delay of 1 to 2 seconds while clicking on the bee image during the zooming process. So, please wait before clicking on the bee image again. 
 
