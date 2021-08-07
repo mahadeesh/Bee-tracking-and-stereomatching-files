@@ -48,6 +48,14 @@ The list of frame numbers in which a bee was successfully tracked will be record
 
 \# - dataset number, \## - camera number (left or right camera), \### - bee number
 
+## Tracking results
+
+Left camera view 
+
+![](GIPHY_CAM_1_1.gif)
+
+Right camera view
+
 ## How to run the stereo-matching program 
 
 Similarly, open the file *Stereo_matching_using_MPD_RPE.m* in Matlab and click run to execute the program. The input to this program is 2D head and tail locations (in pixel coordinates) of bees in each camera view. The output will be a set of minimum perpendicular distance and reprojection error values. The correct corresponding matching bee for each reference bee will be one with lowest minimum perpendicular distance and reprojection error value.
