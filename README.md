@@ -50,11 +50,13 @@ The list of frame numbers in which a bee was successfully tracked will be record
 
 ## Tracking results
 
-Left camera view 
+Left camera's tracking results 
 
 ![](GIPHY_CAM_1_1.gif)
 
-Right camera view
+Right camera's tracking results 
+
+![](GIPHY_CAM_2_2.gif)
 
 ## How to run the stereo-matching program 
 
