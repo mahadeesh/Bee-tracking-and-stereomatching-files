@@ -1,4 +1,5 @@
-# Honeybee tracking and stereomatching program for 3D reconstruction of trajectories of freely flying honeybees
+# Honeybee tracking and stereomatching program for reconstructing 3D trajectories of freely flying honeybees
+
 
 ## Introduction
 
