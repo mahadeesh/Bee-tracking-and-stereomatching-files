@@ -52,19 +52,18 @@ All you need is MATLAB from MathWorks<sup>2</sup>. I have tested the code using 
 
 You can download all input video/files necessary to run the tracking program from [here](https://figshare.com/articles/media/Multi-Object_Tracking_in_Heterogeneous_environments_MOTHe_for_animal_video_recordings/11980356/3). Place all the downloaded videos/files in the folder where you have downloaded the repository.  
 
-As this is a semi-automatic tracking program, the program prompts for the user inputs under certain miscellaneous conditions, please provide the necessary data to smoothly continue the tracking process. When the program asks the user to input the head and tail location a bee in a particular frame, first use the Zoom-in tool on the right top corner of the matlab figure window to zoom in to see the bee’s image closely, then click on the head and tail location of that bee. If you are running the tracking program on a laptop, sometimes there might be a delay of 1 to 2 seconds while clicking on the bee image during the zooming process. So, please wait before clicking on the bee image again. 
+As this is a semi-automatic tracking program, the program prompts the user for inputs under certain miscellaneous conditions, please key in necessary data to smoothly continue the tracking process. When the program asks the user to input the head and tail location of a bee in a particular frame, first use the Zoom-in tool on the top right corner of the matlab figure window to zoom in to see the bee’s image closely, then click on the head and tail location of that bee. If you are running the tracking program on a laptop, sometimes there might be a delay of 1 to 2 seconds while clicking on the bee image. So, please wait before clicking on the bee image again.
 
 Once the tracking program has finished tracking a bee, 4 different output files (.mat) will be saved in the downloaded repository folder. The details of the 4 output files are:
 
-The tracked 2D coordinates of a bee can be obtained from ‘J\_BC\_HT\_CORDS\_DATASET\_#\_CAM\_##\_REFER\_BEE\_###.mat’.
+a) The tracked 2D coordinates of a bee can be obtained from ‘J\_BC\_HT\_CORDS\_DATASET\_#\_CAM\_##\_REFER\_BEE\_###.mat’.
 
-The frames numbers at which occlusion events occurred are available in ‘OCCUL\_FRAMES\_DATASET\_#\_CAM\_##\_REFER\_BEE\_###.mat’.
+b) The frames numbers at which occlusions happened will be stored in
+ ‘OCCUL\_FRAMES\_DATASET\_#\_CAM\_##\_REFER\_BEE\_###.mat’.
 
-The frames where a bee image would appear circular in shape will be saved in ‘RATIO\_A\_BY\_B\_DATASET\_#\_CAM\_##\_REFER\_BEE\_###.mat’. 
+c) The frames where a bee image would appear circular in shape will be saved in ‘RATIO\_A\_BY\_B\_DATASET\_#\_CAM\_##\_REFER\_BEE\_###.mat’. 
 
-The frame numbers for which the program executed without any errors are recorded in this variable ALL\_FRAMES\_DATASET\_#\_CAM\_##\_REFER\_BEE\_###.mat.
-
-The list of frame numbers in which a bee was successfully tracked will be recorded in ALL\_FRAMES\_DATASET\_#\_CAM\_##\_REFER\_BEE\_###.mat.
+d) The list of frame numbers in which a bee was successfully tracked will be recorded in ALL\_FRAMES\_DATASET\_#\_CAM\_##\_REFER\_BEE\_###.mat.
 
 \# - dataset number, \## - camera number (left or right camera), \### - bee number
 
@@ -72,7 +71,7 @@ The list of frame numbers in which a bee was successfully tracked will be record
 
 ## How to track a bee from any frame number
 
-To track bees from any point in the video, just feed in the respective frame number from which you would like to begin the tracking process. 
+To track bees from any point in the video, just key in the respective frame number from which you would like to begin the tracking process. 
 
 Say for instance you are tracking a bee which is present in the arena from frame 1 to frame 800. Assume for some reason that matlab is not responding after 500 frames. In that case, you might need to close and reopen matlab again. Now, instead of starting from frame 1 again, you could continue the tracking process from frame 499. This could be done by simply updating the ‘frame_number’ and ‘frame_count’ variable with the frame number from which you would like to continue the tracking process. Also, uncomment the ‘load’ command for the 4 output variables so that the tracked information from frame 1 to frame 499 will be loaded into the program when executing the program from frame 500 onwards.
 
@@ -95,15 +94,15 @@ Tracked head and tail positions of a bee flying in a curved tunnel
 
 ## How to run the stereo-matching program 
 
-Similarly, open the file *Stereo_matching_using_MPD_RPE.m* in Matlab and click run to execute the program. The input to this program is 2D head and tail locations (in pixel coordinates) of bees in each camera view. The output will be a set of minimum perpendicular distance and reprojection error values. The correct corresponding matching bee for each reference bee will be one with lowest minimum perpendicular distance and reprojection error value.
+Similarly, open the file Stereo_matching_using_MPD_RPE.m in Matlab and click on the run button to execute the program. The input to this program is 2D head and tail locations (in pixel coordinates) of bees in each camera view. The output will be a set of minimum perpendicular distances and reprojection error values. The correct corresponding matching bee for each reference bee will be one with the lowest minimum perpendicular distance and reprojection error value.
 
-To use this stereo-matching program, you must load the stereo camera’s internal and external parameters. Before executing this program, the user will have to generate two (stereo camera) calibration files which consists of camera internal and external parameters. One stereo camera calibration file will be used in computing the minimum perpendicular distances, while the other one will be used in calculating the reprojection errors. One could obtain these two calibration files by performing a calibration process.
+To use this stereomatching program, you must load the stereo camera’s internal and external parameters. Before executing this program, the user will have to generate two (stereo camera) calibration files which consists of camera internal and external parameters. One stereo camera calibration file will be used in computing the minimum perpendicular distances, while the other one will be used in calculating the reprojection errors. One could obtain these two calibration files by performing a calibration process.
 
-So, I generated the first calibration file using Yves Bouget’s stereo calibration toolbox<sup>3</sup>. The second stereo calibration file was generated using Matlab’s stereo calibration toolbox<sup>4</sup>. You can find the two calibration files by name *BC_stereo_cam_calib_trail_3_.mat* and *FEB_16_2017_STEREO_PARAMS.mat* in the repository, which were generated using our bee cloud videos. These two files are initially loaded in the stereomatching program. 
+So, I generated the first calibration file using Yves Bouget’s stereo calibration toolbox<sup>3</sup>. The second stereo calibration file was generated using Matlab’s stereo calibration toolbox<sup>4</sup>. You can find the two calibration files by name *BC_stereo_cam_calib_trail_3_.mat* and *FEB_16_2017_STEREO_PARAMS.mat* in the repository, which were generated using our bee cloud videos. These two files are already loaded in the stereomatching program, therefore, the user doesn't have to do anything while executing our data. However, for your data, you must generate your own stereo calibration files using Yves Bouget and Matlab stereo calibration toolbox. The procedure to generate the stereo calibration files are explained in their websites<sup>3,4.
 
-For your data, you must generate your own stereo calibration files using Yves Bouget and Matlab stereo calibration toolbox. The procedure to generate the stereo calibration files are explained in their websites<sup>2,3.
-
-The variable in which all minimum perpendicular distances and reprojection error values are stored in *MIN_DIST_REPROJ_ERR_INFO.mat*.
+The output variable in which all minimum perpendicular distances and reprojection error values are stored in *MIN_DIST_REPROJ_ERR_INFO.mat*.
+  
+The output variable, *MIN_DIST_REPROJ_ERR_INFO.mat*, will contain all minimum perpendicular distances and reprojection error values.
 
 ## References
 
