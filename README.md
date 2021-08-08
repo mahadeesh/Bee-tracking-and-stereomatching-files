@@ -58,6 +58,7 @@ The list of frame numbers in which a bee was successfully tracked will be record
 
 \# - dataset number, \## - camera number (left or right camera), \### - bee number
 
+#### Note: Using the developed tracking program, I was able to track bees flying in a bee cloud successfully. I have also tested this code by tracking individual bees flying in a curved tunnel. Please refer to the tracking results section to see the tracking output.
 
 ## How to track a bee from any frame number
 
@@ -68,13 +69,19 @@ Say for instance you are tracking a bee which is present in the arena from frame
 
 ## Tracking results
 
-Left camera's tracking results 
+### Bee cloud tracking results
+
+Tracked head and tail positions of bees appearing in the left camera view
 
 ![](GIPHY_CAM_1_1.gif)
 
-Right camera's tracking results 
+Tracked head and tail positions of bees appearing in the right camera view 
 
 ![](GIPHY_CAM_2_2.gif)
+
+Tracked head and tail positions of a bee flying in a curved tunnel
+
+
 
 ## How to run the stereo-matching program 
 
