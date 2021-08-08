@@ -2,41 +2,51 @@
 
 ## Introduction
 
-Here are the files which I developed to generate time resolved 3D position information of bees flying in a bee cloud. The bee tracking program is a semi-automatic tracker of freely flying honeybees, which was developed using simple techniques such background subtraction, image differencing, interpolation, and extrapolation, to name a few. Furthermore, the problem of correspondence matching is solved in a simple way by using two different techniques namely minimum perpendicular distance method and minimum reprojection error method. 
+Here are the files which I developed to generate time resolved or instantaneous 3D positions of bees flying in a bee cloud. The bee tracking program is a semi-automatic tracker of freely flying honeybees, which was developed using simple techniques such background subtraction, image differencing, interpolation, and extrapolation, to name a few. Furthermore, the problem of correspondence matching was solved in a simple way by using two different techniques namely minimum perpendicular distance method and minimum reprojection error method. Using the developed tracker and correspondence matching program, two large bee cloud datasets were digitised and could be accessed from here.
+
+To know more about a bee cloud (which is different from a bee swarm), please see our previous work<sup>[1](https://www.nature.com/articles/s41598-018-35307-5)</sup>.  
+
 
 ## Highlights of the developed bee tracking and stereomatching program
 
-1. Despite being a semi-automatic bee tracking program, the final generated 3D position data contains head as well as tail locations of freely flying bees. Therefore, making it a unique and valuable dataset.
+1.	Despite being a semi-automatic bee tracking program, the final generated 3D position data contains head as well as tail locations of freely flying bees which makes it a unique and valuable dataset.
 
-2. Solves the stereo-matching problem using two cameras. 
+2.	The developed stereomatching code solves the correspondence matching problem just by using two cameras. 
+
+3. The developed tracking program can be applied to track bees flying in a linear and curved tunnel like experimental setup.
+
 
 ## Prerequisites
 
-All you need is MATLAB from MathWorks<sup>1</sup>. I have tested the code using MATLAB R2020 update 5 running on a macOS Catalina. All function files as given in the branch must be present.
+All you need is MATLAB from MathWorks<sup>2</sup>. I have tested the code using MATLAB R2020 update 5 running on a macOS Catalina. All function files as given in the branch must be present.
 
 ## Contents of the files
 
 1)	*Sci_data_bee_tracking_pgm_3.m* - The main bee tracking program which tracks individual bees flying in the bee cloud arena.
 
-2)	*Stereo_matching_using_MPD_RPE.m* – a stereomatching program which matches each bee in one camera view with its corresponding bee image in the other camera view. 
+2)	*Stereo_matching_using_MPD_RPE.m* – a stereomatching code which matches every individual bee image in one camera view with its corresponding bee image in the other camera view. 
 
 3)	*stereo_triangulation_camera_positions.m* – is used to calculate the positions of the two cameras with respect to the origin.
 
 4)	*fit_ellipse.m* – is an open-source ellipse fitting program.
 
+
 ## How to perform image differencing operation using *ImageJ*
 
-1.	Drag and drop the raw video in ImageJ (variable name - v)
-2.	Go to Image in the main menu >> stacks >> Z project >> select projection type as ‘median’ and click ‘OK’ >> image with only a background scene will be obtained (variable name - ov).
-3.	Go to process in the main menu >> image calculator >> select the operation as ‘difference’.
-4.	From the Image1 drop down list box, select the file name of the raw input video. Similarly, for Image2, select the name of the file obtained in step 2 and click ‘OK’.
-5.	The resulting final video will eventually appear which will have to be saved using the ‘save as’ option from the main menu. Then, select ‘avi’ from the list which will save the final video in the destination folder as chosen by the user. 
+1.	Drag and drop the raw video in ImageJ (variable name – ‘v’ in the code)
 
+2.	Go to Image option in the main menu >> stacks >> Z project >> select projection type as ‘median’ and click ‘OK’ >> image with only a background scene will be obtained (variable name – ‘ov’ in the code).
+
+3.	Go to process in the main menu >> image calculator >> select operation as ‘difference’.
+
+4.	From Image1 drop down list box, select the file name of the raw input video. Similarly, for Image2, select the name of the file obtained in step 2 and click ‘OK’.
+
+5.	The resulting final video will eventually appear which will have to be saved using the ‘save as’ option from the main menu. Then, select ‘avi’ from the list of options which will save the final video in the destination folder as chosen by the user. 
 
 
 ## How to run the bee tracking program
 
-1. Download the repository into a folder
+1. Download the repository into a local folder
 
 2. To run the bee tracking program, simply open the file *Sci_data_bee_tracking_pgm_3.m* in Matlab and click on the run button. Before clicking on the run command, make sure all necessary input videos/files are properly placed in the local repository folder. 
 
@@ -81,7 +91,7 @@ Tracked head and tail positions of bees appearing in the right camera view
 
 Tracked head and tail positions of a bee flying in a curved tunnel
 
-
+![](GIPHY_CAM_5_5.gif)
 
 ## How to run the stereo-matching program 
 
@@ -89,7 +99,7 @@ Similarly, open the file *Stereo_matching_using_MPD_RPE.m* in Matlab and click r
 
 To use this stereo-matching program, you must load the stereo camera’s internal and external parameters. Before executing this program, the user will have to generate two (stereo camera) calibration files which consists of camera internal and external parameters. One stereo camera calibration file will be used in computing the minimum perpendicular distances, while the other one will be used in calculating the reprojection errors. One could obtain these two calibration files by performing a calibration process.
 
-So, I generated the first calibration file using Yves Bouget’s stereo calibration toolbox<sup>2</sup>. The second stereo calibration file was generated using Matlab’s stereo calibration toolbox<sup>3</sup>. You can find the two calibration files by name *BC_stereo_cam_calib_trail_3_.mat* and *FEB_16_2017_STEREO_PARAMS.mat* in the repository, which were generated using our bee cloud videos. These two files are initially loaded in the stereomatching program. 
+So, I generated the first calibration file using Yves Bouget’s stereo calibration toolbox<sup>3</sup>. The second stereo calibration file was generated using Matlab’s stereo calibration toolbox<sup>4</sup>. You can find the two calibration files by name *BC_stereo_cam_calib_trail_3_.mat* and *FEB_16_2017_STEREO_PARAMS.mat* in the repository, which were generated using our bee cloud videos. These two files are initially loaded in the stereomatching program. 
 
 For your data, you must generate your own stereo calibration files using Yves Bouget and Matlab stereo calibration toolbox. The procedure to generate the stereo calibration files are explained in their websites<sup>2,3.
 
@@ -97,11 +107,13 @@ The variable in which all minimum perpendicular distances and reprojection error
 
 ## References
 
-1. The Mathworks, Inc., Natick, Massachusetts, <https://www.mathworks.com/> (2021).
+1. Mahadeeswara, M. Y. & Srinivasan, M. V. Coordinated Turning Behaviour of Loitering Honeybees. Sci Rep 8, 16942, doi:10.1038/s41598-018-35307-5 (2018).
+  
+2. The Mathworks, Inc., Natick, Massachusetts, <https://www.mathworks.com/> (2021).
 
-2. Bouguet, J.-Y. Complete Camera Calibration Toolbox for Matlab. Jean-Yves Bouguet’s Homepage <http://www.vision.caltech.edu/bouguetj/calib_doc/> (1999).
+3. Bouguet, J.-Y. Complete Camera Calibration Toolbox for Matlab. Jean-Yves Bouguet’s Homepage <http://www.vision.caltech.edu/bouguetj/calib_doc/> (1999).
 
-3. Matlab’s Stereo Camera Calibrator App <https://au.mathworks.com/help/vision/ug/stereo-camera-calibrator-app.html>.
+4. Matlab’s Stereo Camera Calibrator App <https://au.mathworks.com/help/vision/ug/stereo-camera-calibrator-app.html>.
 
 
 
