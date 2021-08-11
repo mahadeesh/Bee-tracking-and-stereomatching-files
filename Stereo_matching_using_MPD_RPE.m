@@ -32,8 +32,11 @@ clear all;
 close all;
 clc;
 
-Ref_bee_no =  [10 11 12 17 18 19];  
-opt_bee_numbers = [1:6 8:16 18:99 101:103]; 
+% Bee numbers from left and right camera views
+% key in the bee numbers from the two camera views
+
+Ref_bee_no =  [10 11 12 17 18 19]; % bee IDs from right camera view  
+opt_bee_numbers = [1:6 8:16 18:99 101:103]; % bee IDs from left camera view
 
 obj_no1 = 1; obj_no2=1;
 part = 'HEAD'; 
@@ -88,7 +91,7 @@ for tt = 1:length(opt_bee_numbers)
  opt_act_num = opt_bee_numbers(tt);
  
 % importing 2D position data of bees flying in the LEFT camera view
-% provide the path of the sample inputs downloaded in your local foler
+% provide the path of the sample inputs downloaded in your local folder
 
 % myfilename3 = sprintf('ANALYSIS/DATA FROM SHARED DRIVE FROM SRINI 4 JUNE 2021/2D TRACKS RECONSTRUCTION/DS1_OTHER_BEES_2D_TRACK_CAM3/J_BC_HT_CORDS_CAM_3_%s_BEE_NUMBER_%d_f100.mat',DATA_INFO,opt_act_num);
 myfilename3 = sprintf('ANALYSIS/WRITING/MANUSCRIPT 2/SCI DATA PROGRAMS FOR UPLOAD/SAMPLE_INPUTS_FOR_STEREOMATCHING_PROGRAM/DS1_OTHER_BEES_2D_TRACK_LEFT_CAM_VIEW/J_BC_HT_CORDS_CAM_3_%s_BEE_NUMBER_%d_f100.mat',DATA_INFO,opt_act_num);
