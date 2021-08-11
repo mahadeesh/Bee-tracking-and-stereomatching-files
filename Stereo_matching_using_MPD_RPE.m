@@ -23,7 +23,7 @@
 
 % See read the associated readme file once before running this program
 
-% Sample inputs are also provided : https://github.com/mahadeesh/Bee-tracking-and-stereomatching-files 
+% Sample inputs are also provided at https://github.com/mahadeesh/Bee-tracking-and-stereomatching-files 
 
 % If there are questions in relation to the operation of this software,
 % please contact: Mandiyam Mahadeeswara at m.mandiyam@uq.edu.au or mdevaraj@outlook.com
@@ -32,8 +32,8 @@ clear all;
 close all;
 clc;
 
-Ref_bee_no =  [10 11 12 17 18 19];  %[5:13 15:64 68:134 137:140 143:162 164:175 177:184 186:223 225];
-opt_bee_numbers = [1:6 8:16 18:99 101:103]; % [1:6 8:16 18:99 101:224];
+Ref_bee_no =  [10 11 12 17 18 19];  
+opt_bee_numbers = [1:6 8:16 18:99 101:103]; 
 
 obj_no1 = 1; obj_no2=1;
 part = 'HEAD'; 
@@ -57,7 +57,8 @@ for mm = 1:length(Ref_bee_no)
     
 beestart_no = Ref_bee_no(mm); 
    
-% a standard chosen reference points for our reference 
+% a standard reference points for in our experiments and will not affect
+% new set of inputs from the 
 
 myfilename1 = sprintf('BC_16_FEB_LEFT_REF_POINTS_CAM1_BKP.txt');
 
@@ -86,7 +87,8 @@ for tt = 1:length(opt_bee_numbers)
  
  opt_act_num = opt_bee_numbers(tt);
  
-% importing the 2D position data of bees flying in the LEFT camera view 
+% importing 2D position data of bees flying in the LEFT camera view
+% provide the path of the sample inputs downloaded in your local foler
 
 % myfilename3 = sprintf('ANALYSIS/DATA FROM SHARED DRIVE FROM SRINI 4 JUNE 2021/2D TRACKS RECONSTRUCTION/DS1_OTHER_BEES_2D_TRACK_CAM3/J_BC_HT_CORDS_CAM_3_%s_BEE_NUMBER_%d_f100.mat',DATA_INFO,opt_act_num);
 myfilename3 = sprintf('ANALYSIS/WRITING/MANUSCRIPT 2/SCI DATA PROGRAMS FOR UPLOAD/SAMPLE_INPUTS_FOR_STEREOMATCHING_PROGRAM/DS1_OTHER_BEES_2D_TRACK_LEFT_CAM_VIEW/J_BC_HT_CORDS_CAM_3_%s_BEE_NUMBER_%d_f100.mat',DATA_INFO,opt_act_num);
@@ -129,7 +131,9 @@ OPT_VIEW_FIRST_FRAME = opt_start_pos;
 OPT_VIEW_LAST_FRAME = opt_end_pos;
 
 
-% importing the 2D position data of bees flying in the RIGHT camera view 
+% importing 2D position data of bees flying in the RIGHT camera view 
+
+% provide the path of the sample inputs downloaded in your local folder
 
 % myfilename4 = sprintf('ANALYSIS/DATA FROM SHARED DRIVE FROM SRINI 4 JUNE 2021/2D TRACKS RECONSTRUCTION/DS1_REFERENCE_BEE_2D_TRACK_CAM2/J_BC_HT_CORDS_CAM_2_%s_BEE_NUMBER_BEE_%d_f1.mat',DATA_INFO,beestart_no);
 myfilename4 = sprintf('ANALYSIS/WRITING/MANUSCRIPT 2/SCI DATA PROGRAMS FOR UPLOAD/SAMPLE_INPUTS_FOR_STEREOMATCHING_PROGRAM/DS1_REFERENCE_BEE_2D_TRACK_RIGHT_CAM_VIEW/J_BC_HT_CORDS_CAM_2_%s_BEE_NUMBER_BEE_%d_f1.mat',DATA_INFO,beestart_no);
@@ -326,7 +330,7 @@ short_dist_using_mpd_method(tt,hh) = short_dist_mpd;
 
 end
 
-% each bee's MPD 
+% each bee's mean MPD 
 
 mean_short_dist_using_mpd(1,tt) = mean(short_dist_using_mpd_method(tt,1:hh)); % mean shortest distance
 mean_short_dist_using_mpd(2,tt) = opt_act_num; % bee num
@@ -340,13 +344,13 @@ FRAME_POS = F_start:F_end;
 FRAME_START_END(1,tt) = F_start;
 FRAME_START_END(2,tt) = F_end;
 
-% 
+% each bee's mean RPE
 
 mean_reproj_error(1,tt) = mean(reproj_aft(1:hh));
 mean_reproj_error(2,tt) = opt_act_num;
 mean_reproj_error(3,tt) = std(reproj_aft(1:hh),0,2);
 
-% all 
+% all MPD and RPE values are stored here
 
 MIN_DIST_REPROJ_ERR_INFO(beestart_no).INDI_MIN_DIST(opt_act_num,1:hh) = short_dist_using_mpd_method(tt,1:hh);
 MIN_DIST_REPROJ_ERR_INFO(beestart_no).INDI_RPE_ERR(opt_act_num,1:hh) = reproj_aft(1:hh);
