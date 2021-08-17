@@ -95,6 +95,15 @@ Tracked head and tail positions of a bee flying in a curved tunnel
 
 ## How to run the stereo-matching program 
 
+Download the code for the stereomatching process from [here] (https://github.com/mahadeesh/Bee-tracking-and-stereomatching-files ). The stereomatching program along with the other related files are in ‘CODE_FOR_STEREOMATCHING’ folder. 
+
+The sample inputs for executing the stereomatching program can be downloaded from ‘SAMPLE_INPUTS_FOR_STEREOMATCHING_PROGRAM’ folder given [here] (https://figshare.com/s/cb7edd04e5818607ea9a ).
+
+Please ensure that the ‘SAMPLE_INPUTS_FOR_STEREOMATCHING_PROGRAM’ folder is placed in the ‘CODE_FOR_STEREOMATCHING’ folder, to ensure that the Matlab programs have access to the sample input data via the specified directory paths.
+
+From ‘CODE_FOR_STEREOMATCHING’ folder, open the file *Stereo_matching_using_MPD_RPE.m* in Matlab and click on the run button to execute the program. The inputs to this program are the 2D head and tail locations (in pixel coordinates) of bees in each camera view. The output will be a set of minimum perpendicular distances and reprojection error values. The correct matching bee for each reference bee will be the one with the lowest mean minimum perpendicular distance and mean reprojection error value. 
+
+
 Similarly, open the file Stereo_matching_using_MPD_RPE.m in Matlab and click on the run button to execute the program. The input to this program is 2D head and tail locations (in pixel coordinates) of bees in each camera view. The output will be a set of minimum perpendicular distances and reprojection error values. The correct corresponding matching bee for each reference bee will be one with the lowest minimum perpendicular distance and reprojection error value.
 
 To use this stereomatching program, you must load the stereo camera’s internal and external parameters. Before executing this program, the user will have to generate two (stereo camera) calibration files which consists of camera internal and external parameters. One stereo camera calibration file will be used in computing the minimum perpendicular distances, while the other one will be used in calculating the reprojection errors. One could obtain these two calibration files by performing a calibration process.
