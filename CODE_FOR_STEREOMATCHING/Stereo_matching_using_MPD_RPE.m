@@ -436,8 +436,11 @@ MATCHING_BEE_MIN_DIST_REPROJ_ERR(4,beestart_no) = RPE_ERR_VAL_BEE(2,1);
 
 save('MATCHING_BEE_MIN_DIST_REPROJ_ERR.mat');
 
+% output_message = sprintf('Reference bee %d matching pair is %d',beestart_no,MATCHING_BEE_MIN_DIST_REPROJ_ERR(2,beestart_no));
 
-disp('--------------DONE--------------------------------');
+output_message = sprintf('The corresponding matching pair for the reference bee %d is %d ',beestart_no,MATCHING_BEE_MIN_DIST_REPROJ_ERR(2,beestart_no));
+
+disp(output_message);
 
 clear UNS_OPT_HEAD_X UNS_OPT_HEAD_Y UNS_RIGHT_TRAC_value_x UNS_RIGHT_TRAC_value_y OPT_HEAD_X OPT_HEAD_Y SMO_RIGHT_TRAC_value_x SMO_RIGHT_TRAC_value_y mean_reproj_error reproj_aft short_dist_from_mmy_pgm mean_short_dist_from_mmy_pgm sorted_corres_BEE;
     
