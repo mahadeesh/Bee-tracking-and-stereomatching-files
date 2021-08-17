@@ -57,14 +57,14 @@ As this is a semi-automatic tracking program, the program prompts the user for i
 
 Once the tracking program has finished tracking a bee, 4 different output files (.mat) will be saved in the downloaded repository folder. The details of the 4 output files are:
 
-a) The tracked 2D coordinates of a bee can be obtained from ‘J\_BC\_HT\_CORDS\_DATASET\_#\_CAM\_##\_REFER\_BEE\_###.mat’.
+a) The tracked 2D coordinates of a bee can be obtained from ‘*J\_BC\_HT\_CORDS\_DATASET\_#\_CAM\_##\_REFER\_BEE\_###.mat*’.
 
 b) The frames numbers at which occlusions happened will be stored in
- ‘OCCUL\_FRAMES\_DATASET\_#\_CAM\_##\_REFER\_BEE\_###.mat’.
+ ‘*OCCUL\_FRAMES\_DATASET\_#\_CAM\_##\_REFER\_BEE\_###.mat*’.
 
-c) The frames where a bee image would appear circular in shape will be saved in ‘RATIO\_A\_BY\_B\_DATASET\_#\_CAM\_##\_REFER\_BEE\_###.mat’. 
+c) The frames where a bee image would appear circular in shape will be saved in ‘*RATIO\_A\_BY\_B\_DATASET\_#\_CAM\_##\_REFER\_BEE\_###.mat*’. 
 
-d) The list of frame numbers in which a bee was successfully tracked will be recorded in ALL\_FRAMES\_DATASET\_#\_CAM\_##\_REFER\_BEE\_###.mat.
+d) The list of frame numbers in which a bee was successfully tracked will be recorded in '*ALL\_FRAMES\_DATASET\_#\_CAM\_##\_REFER\_BEE\_###.mat*'.
 
 \# - dataset number, \## - camera number (left or right camera), \### - bee number
 
