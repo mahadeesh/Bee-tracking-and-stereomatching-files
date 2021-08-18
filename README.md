@@ -3,7 +3,7 @@
 
 ## Introduction
 
-This contains the files for the  generation of time resolved or instantaneous 3D positions of bees flying in a bee cloud. The bee tracking program is a semi-automatic tracker of freely flying honeybees, which was developed techniques including background subtraction, image differencing, interpolation, and extrapolation. The problem of correspondence matching was solved in a simple way by using two different techniques, namely, a minimum perpendicular distance method and  a minimum reprojection error method. Using the developed tracker and correspondence matching program, two large bee cloud datasets were digitised.  They can be accessed from here.
+This contains the files for the  generation of time resolved or instantaneous 3D positions of bees flying in a bee cloud. The bee tracking program is a semi-automatic tracker of freely flying honeybees, which was developed techniques including background subtraction, image differencing, interpolation, and extrapolation. The problem of correspondence matching was solved in a simple way by using two different techniques, namely, a minimum perpendicular distance method and  a minimum reprojection error method. Using the developed tracker and correspondence matching program, two large bee cloud datasets were digitised. 
 
 For more information about a bee cloud (which is different from a bee swarm), please see our previous study<sup>[1](https://www.nature.com/articles/s41598-018-35307-5)</sup>.
 
