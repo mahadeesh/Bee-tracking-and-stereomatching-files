@@ -49,9 +49,9 @@ All that is needed is MATLAB software from MathWorks<sup>2</sup>. The developed 
 
 1.	Download the repository into a local folder.
 
-2.	To run the bee tracking program, open the file Sci_data_bee_tracking_pgm_3.m in Matlab and click on the run button. Before clicking on the run command, make sure all necessary input videos/files are properly placed in the local repository folder.
+2.	To run the bee tracking program, open the file *Sci_data_bee_tracking_pgm_3.m* in Matlab and click on the run button. Before clicking on the run command, make sure all necessary input videos/files are properly placed in the local repository folder.
 
-All the input video/files necessary to run the tracking program can be downloaded from [here]. Place all the downloaded videos/files in the folder where the repository has been downloaded.
+The sample inputs for executing the bee tracking program can be downloaded from ‘SAMPLE_INPUTS_FOR_BEE_TRACKING_PROGRAM’ folder given [here](https://figshare.com/s/cb7edd04e5818607ea9a ). Place all the downloaded videos/files in the folder where the repository has been downloaded.
 
 As this is a semi-automatic tracking program, the program will occasionally prompt the user for inputs under certain conditions, please key in the necessary data to continue the tracking process. When the program asks the user to input the head and tail locations of a bee in a particular frame, first use the Zoom-in tool on the top right corner of the Matlab figure window to to see the bee’s image closely, then click on the head and tail locations of that bee. If you are running the tracking program on a laptop, there could sometimes be a response delay of 1 to 2 seconds. So, please wait before clicking on the bee image again.
 
